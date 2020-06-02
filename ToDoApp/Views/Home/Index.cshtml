@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ToDoApp.Models.Task>
+
+@{
+    ViewData["Title"] = "Home Page";
+
+}
+
+    <a href="~/Categories">Перейти к списку категорий</a>
+
+    <table class="table">
+        <thead>
+            <tr scope="row">
+                <th scope="col">Категория</th>
+                <th scope="col">Задача</th>
+                <th scope="col">Комментарий</th>
+                <th scope="col">Срок выполнения</th>
+                <th scope="col">Выполнено</th>
+            </tr>
+        </thead>
+
+        @foreach (var t in Model)
+        {
+    <tr scope="row">
+        <td>@t.Category.Name</td>
+        <td>@t.Title</td>
+        <td>@t.Comment</td>
+        <td>@t.Deadline</td>
+        <td>@t.Done</td>
+    </tr>
+        }
+    </table>
